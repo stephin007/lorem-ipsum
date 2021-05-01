@@ -7,7 +7,22 @@ function App() {
 
     const handleSubmit=(e)=>{
         e.preventDefault()
-        setText(data)
+        //if you console.log the count you will see that count is a string not a number, its not necessary but its a
+        // good practice to convert string to number if you are working with number
+        let amount = parseInt(count)
+
+        //condition if count becomes zero or goes below zero, it will show atleast one paragraph
+        if(count <= 0){
+            amount = 1
+        }
+
+        //condition if count goes above the total length of the data, it will show all the paragraphs inside your
+        // data array
+        if(count > data.length){
+            amount = data.length
+        }
+
+        setText(data.slice(0,amount))
     }
   return (
     <section className="section-center">
