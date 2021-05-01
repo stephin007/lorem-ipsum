@@ -148,7 +148,7 @@ p {
 .section-center {
     width: 90vw;
     margin: 0 auto;
-    max-width: 40rem;
+    max-width: 50rem;
     margin-top: 5rem;
     text-align: center;
 }
@@ -180,13 +180,21 @@ h3 {
     justify-content: center;
     align-items: center;
 }
-label {
+
+.lorem-type{
     font-size: 1.25rem;
     color: var(--clr-primary-1);
 }
 input {
     padding: 0.25rem 0.5rem;
     width: 4rem;
+    border-radius: var(--radius);
+    border: none;
+    margin: 0 0.5rem;
+    font-size: 1.25rem;
+}
+select{
+    padding: 0.25rem 0.5rem;
     border-radius: var(--radius);
     border: none;
     margin: 0 0.5rem;
