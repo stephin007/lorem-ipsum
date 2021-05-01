@@ -1,9 +1,9 @@
 function App() {
   return (
-    <div className="App">
-      hello
-    </div>
+    <section className="section-center">
+        <h3>tired of lorem ipsum</h3>
+    </section>
   );
 }
 
-export default App;
+export default App
