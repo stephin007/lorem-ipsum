@@ -1,31 +1,33 @@
 import {useState} from "react"
 
 function App() {
-    const [count, setCount] = useState(0)
-    const [text, setText] = useState([])
-    const [type, setType] = useState("hipster-latin")
+  const [count, setCount] = useState(0)
+  const [text, setText] = useState([])
+  const [type, setType] = useState("hipster-latin")
     const handleSubmit= async (e)=>{
+    const url = `https://hipsum.co/api/?type=${type}&paras=50`
+    e.preventDefault()
+    // if you console.log the count you will see that count is a string not a
+    // number, its not necessary but its a
+    // good practice to convert string to number if you are working with number
+    let amount = parseInt(count)
 
-        const url = `https://hipsum.co/api/?type=${type}&paras=50`
-        e.preventDefault()
-        //if you console.log the count you will see that count is a string not a number, its not necessary but its a
-        // good practice to convert string to number if you are working with number
-        let amount = parseInt(count)
+    const response = await fetch(url)
+    const newTexts = await response.json()
+    console.log(newTexts)
 
-        const response = await fetch(url)
-        const newTexts = await response.json()
-        console.log(newTexts)
+    // condition if count becomes zero or goes below zero, it will show atleast
+    // one paragraph
+    if (count <= 0) {
+      amount = 1
+    }
+    setText(newTexts.slice(0, amount))
 
-        //condition if count becomes zero or goes below zero, it will show atleast one paragraph
-        if(count <= 0){
-            amount = 1
-        }
-        setText(newTexts.slice(0,amount))
-
-        //condition if count goes above the total length of the data, it will show all the paragraphs inside your array
-        if(count > text.length){
-            amount = text.length
-        }
+    // condition if count goes above the total length of the data, it will show
+    // all the paragraphs inside your array
+    if (count > text.length) {
+      amount = text.length
+    }
     }
     return (
         <section className="section-center">
@@ -36,7 +38,8 @@ function App() {
                             <label htmlFor="amount" className="responsive-text lorem-type">
                                 paragraphs:
                             </label>
-                            <input className="responsive-text" type="number" name="amount" id="amount" value={count} onChange={(e)=>setCount(e.target.value)}/>
+                            <input className="responsive-text" type="number" name="amount" id="amount" value={count} onChange={
+    (e) => setCount(e.target.value)}/>
                         </span>
                         <span className="grid-2">
                             <label htmlFor="type" className="responsive-text lorem-type">Choose a version:</label>
