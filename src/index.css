@@ -168,8 +168,6 @@ Lorem Ipsum
 ===============
 */
 h3 {
-    font-size: 3rem;
-    font-family:sans-serif;
     text-transform: uppercase;
     color: var(--clr-primary-1);
 }
@@ -207,59 +205,4 @@ button {
 }
 .result {
     margin-bottom: 2rem;
-}
-
-/* HEADER SECTION */
-.body-wrapper{
-  width: 100%;
-  position: relative;
-  /* height: 100vh; */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.container{
-  position: inherit;
-  width: 90%;
-  margin-top: 70px;
-  padding: 0px 50px;
-  height: 800px;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.container-heading{
-  text-align: center;
-  text-transform: uppercase;
-  float: right;
-  height: 700px;
-  width: 700px;
-  font-size: 6rem;
-  line-height: 1.8;
-  word-wrap: break-word;
-  font-family: 'Rock Salt', cursive;
-}
-
-.container img{
-  height: 700px;
-  width: 700px;
-  border-radius: 100%;
-  border: none;
-  shape-outside: circle(100%);
-  box-shadow: 5px 5px 20px black;
-}
-
-.lorem-section{
-  height: auto;
-  width: 100%;
-  position: relative;
-}
-
-#root{
-  width: 70%;
-  margin: 300px 250px 30px 250px;
 }
