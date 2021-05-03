@@ -30,20 +30,26 @@ function App() {
     return (
         <section className="section-center">
             <h3>tired of lorem ipsum</h3>
-            <form className="lorem-form" onSubmit={handleSubmit}>
-                <label htmlFor="amount" className="lorem-type">
-                    paragraphs:
-                </label>
-                <input type="number" name="amount" id="amount" value={count} onChange={(e)=>setCount(e.target.value)}/>
-                <label htmlFor="type" className="lorem-type">Choose a version:</label>
-                <select name="types" id="types" onChange={(e)=> setType(e.target.value)}>
-                    <option value="hipster-latin">Hipster Speak Only </option>
-                    <option value="hipster-centric">Hipster Speak with Latin</option>
-                </select>
-                <button className="btn">
-                    generate
-                </button>
-            </form>
+                <form className="lorem-form" onSubmit={handleSubmit}>
+                    <div className="cont">
+                        <span className="grid-1">
+                            <label htmlFor="amount" className="lorem-type">
+                                paragraphs:
+                            </label>
+                            <input type="number" name="amount" id="amount" value={count} onChange={(e)=>setCount(e.target.value)}/>
+                        </span>
+                        <span className="grid-2">
+                        <label htmlFor="type" className="lorem-type">Choose a version:</label>
+                            <select name="types" id="types" onChange={(e)=> setType(e.target.value)}>
+                                <option value="hipster-latin">Hipster Speak Only </option>
+                                <option value="hipster-centric">Hipster Speak with Latin</option>
+                            </select>
+                        </span>
+                        <button className="grid-3 btn">
+                            generate
+                        </button>
+                    </div>
+                </form>
             <article className="lorem-text">
                 {text.map((item, index)=> {
                     return (

@@ -206,3 +206,49 @@ button {
 .result {
     margin-bottom: 2rem;
 }
+
+/* For responsivness */
+
+.cont {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+.grid-1{
+    grid-column: span 4;
+}
+.grid-2{
+    grid-column: span 8;
+}
+.grid-3{
+    grid-column: span 12;
+    margin-top: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+    .grid-1 {
+        grid-column: span 12;
+    }
+    .grid-2 {
+        grid-column: span 12;
+        margin-top: 1rem;
+    }
+    .grid-3 {
+        grid-column: span 12;
+        margin-top: 1rem;
+    }
+}
+  @media screen and (max-width: 480px) {
+    .grid-1 {
+        grid-column: span 12;
+    }
+      .grid-2 {
+        grid-column: span 12;
+        margin-top: 1rem;
+    }
+      .grid-3 {
+        grid-column: span 12;
+        margin-top: 1rem;
+    }
+  }
+
+
