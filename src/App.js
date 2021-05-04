@@ -4,8 +4,10 @@ function App() {
     const [count, setCount] = useState(0)
     const [text, setText] = useState([])
     const [type, setType] = useState("hipster-latin")
+    const [showLoading, setShowLoading] = useState(false);
     const handleSubmit= async (e)=>{
-
+        // starts showing loading gif once submit is clicked
+        setShowLoading(true);
         const url = `https://hipsum.co/api/?type=${type}&paras=50`
         e.preventDefault()
         //if you console.log the count you will see that count is a string not a number, its not necessary but its a
@@ -20,7 +22,8 @@ function App() {
         if(count <= 0){
             amount = 1
         }
-        setText(newTexts.slice(0,amount))
+        //as soon as the text data is ready, turn off the loading GIF
+        setText(newTexts.slice(0,amount), setShowLoading(false));
 
         //condition if count goes above the total length of the data, it will show all the paragraphs inside your array
         if(count > text.length){
@@ -50,13 +53,16 @@ function App() {
                         </button>
                     </div>
                 </form>
-            <article className="lorem-text">
-                {text.map((item, index)=> {
-                    return (
-                        <p key={index}>{item}</p>
-                    )
-                })}
-            </article>
+            {showLoading ? <div className="loader-gif"></div>
+                :
+                <article className="lorem-text">
+                        {text.map((item, index)=> {
+                            return (
+                                <p key={index}>{item}</p>
+                            )
+                        })}
+                </article>
+            }
         </section>
   );
 }
