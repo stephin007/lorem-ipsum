@@ -187,10 +187,6 @@ BODY WRAPPER
   text-align: center;
 }
 
-.lorem-container {
-  width: auto;
-}
-
 /* @media screen and (min-width: 992px) {
   .section-center {
     width: 95vw;
@@ -206,11 +202,6 @@ BODY WRAPPER
 Lorem Ipsum
 ===============
 */
-.lorem-container h3 {
-  text-transform: uppercase;
-  color: var(--clr-primary-1);
-  font-size: 3.7rem;
-}
 
 .lorem-form {
   text-transform: capitalize;
