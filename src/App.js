@@ -9,9 +9,7 @@ function App() {
   const [type, setType] = useState("hipster-latin");
   const [showLoading, setShowLoading] = useState(false);
   const [dark, setDark] = useState(true);
-  const [theme, setTheme] = useState([]);
-
-  console.log(theme);
+  const [theme, setTheme] = useState("");
 
   const handleSubmit = async (e) => {
     // starts showing loading gif once submit is clicked
@@ -43,16 +41,16 @@ function App() {
     localStorage.setItem("theme", JSON.stringify(dark));
     const data = localStorage.getItem("theme");
     setTheme(data);
-  }, [dark]);
+  }, []);
 
   return (
     <React.Fragment>
-      {theme === "true" ? (
+      {dark === false ? (
         <div className="app__dark">
           <section className="section-center">
             <ToggleOffIcon
               onClick={() => {
-                setDark(false);
+                setDark(true);
               }}
               fontSize="large"
               style={{ color: "white" }}
@@ -112,7 +110,7 @@ function App() {
           <section className="section-center">
             <ToggleOnIcon
               onClick={() => {
-                setDark(true);
+                setDark(false);
               }}
               fontSize="large"
               style={{ color: "black" }}
