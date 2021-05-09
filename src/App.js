@@ -8,7 +8,7 @@ function App() {
   const [text, setText] = useState([]);
   const [type, setType] = useState("hipster-latin");
   const [showLoading, setShowLoading] = useState(false);
-  const [dark] = useState(false);
+  const [dark, setDark] = useState(true);
   const [theme, setTheme] = useState([]);
 
   console.log(theme);
@@ -51,7 +51,9 @@ function App() {
         <div className="app__dark">
           <section className="section-center">
             <ToggleOffIcon
-              onClick={() => setTheme("false")}
+              onClick={() => {
+                setDark(false);
+              }}
               fontSize="large"
               style={{ color: "white" }}
             />
@@ -109,7 +111,9 @@ function App() {
         <div className="app__light">
           <section className="section-center">
             <ToggleOnIcon
-              onClick={() => setTheme("true")}
+              onClick={() => {
+                setDark(true);
+              }}
               fontSize="large"
               style={{ color: "black" }}
             />
