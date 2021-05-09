@@ -57,12 +57,16 @@ Global Styles
     padding: 0;
     box-sizing: border-box;
 }
-body {
+
+html{
+    scroll-behavior: smooth;
+}
+
+.body-wrapper{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     background: var(--clr-grey-10);
     color: var(--clr-grey-1);
-    line-height: 1.5;
     font-size: 0.875rem;
 }
 ul {
@@ -77,7 +81,6 @@ h3,
 h4 {
     letter-spacing: var(--spacing);
     text-transform: capitalize;
-    line-height: 1.25;
     margin-bottom: 0.75rem;
 }
 h1 {
@@ -119,11 +122,15 @@ p {
         line-height: 1;
     }
 }
-/*  global classes */
+/* 
+ =============
+ Button
+ =============
+ */
 
 .btn {
     text-transform: uppercase;
-    background: var(--clr-primary-5);
+    background-color: var(--clr-primary-10);
     color: var(--clr-primary-1);
     padding: 0.375rem 0.75rem;
     letter-spacing: 1px;
@@ -136,37 +143,33 @@ p {
     border-radius: var(--radius);
 }
 .btn:hover {
-    color: var(--clr-primary-5);
+    color: var(--clr-primary-10);
+    font-weight: 600;
     background: var(--clr-primary-8);
     border-color: var(--clr-primary-8);
 }
-/* section */
-.section {
-    padding: 5rem 0;
-}
+
+/*
+============= 
+Lorem section
+============= 
+*/
 
 .section-center {
-    width: 90vw;
-    margin: 0 auto;
-    max-width: 50rem;
-    margin-top: 5rem;
+    width: 100%;
+    padding-top: 5rem;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-@media screen and (min-width: 992px) {
-    .section-center {
-        width: 95vw;
-    }
-}
-main {
-    min-height: 100vh;
-    display: grid;
-    place-items: center;
-}
+
 /*
 ===============
-Lorem Ipsum
+Lorem Ipsum Content
 ===============
 */
+
 h3 {
     text-transform: uppercase;
     color: var(--clr-primary-1);
@@ -177,7 +180,8 @@ h3 {
     margin-left: 0;
     margin-right: 0;
     margin-top: 2rem;
-    margin-bottom: 4rem;
+    padding-bottom: 3rem;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -201,14 +205,53 @@ select{
     margin: 0 0.5rem;
     font-size: 1.25rem;
 }
-button {
-    background: var(--clr-primary-10);
-}
-.result {
-    margin-bottom: 2rem;
+
+.lorem-text{
+    width: 60%;
 }
 
-/* For responsivness */
+/*
+===========
+COVER PAGE 
+=========== 
+*/
+
+ .landing-section{
+     position: relative;
+     padding: 30rem 0;
+     width: 100%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+
+ .landing-section::before{
+     content: '';
+     position: absolute;
+     top: 0;
+     left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: lightcoral;
+     clip-path: circle(40% at 3% 10%);
+ }
+
+ .landing-section::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0; 
+    background-color: lightgreen;
+    clip-path: circle(40% at right 80%);
+}
+
+/*
+================== 
+FOR RESPONSIVENESS 
+==================
+*/
 
 .cont {
     display: grid;
@@ -262,3 +305,125 @@ button {
 
 
 
+ .container{
+     position: absolute;
+     z-index: 3;
+     padding: 0.8rem 0;
+     border-radius: 10px;
+     border-color: rgba(0, 0, 0, 0.1);
+     height: 60%;
+     width: 60%;
+     box-shadow: 15px 15px 45px 10px rgba(0, 0, 0, 0.3),
+     -15px -15px 45px 10px rgba(0, 0, 0, 0.3);
+     background-color: rgba(201, 185, 185, 0.3);
+     backdrop-filter: blur(8px);
+     display: flex;
+     justify-content: space-evenly;
+     flex-direction: column;
+     align-items: center;
+     overflow: hidden;
+ }
+
+ .container h3{
+     position: relative;
+     text-align: center;
+     pointer-events: none;
+     font-size: 10rem;
+ }
+
+ .container a{
+     position: relative;
+     text-transform: capitalize;
+     padding: 8px 15px;
+     font-size: 2rem;
+     background-color: var(--clr-grey-1);
+     color: var(--clr-primary-10);
+     transition: all 0.5s linear;
+     border-radius: 5px;
+     border: none;
+}
+
+.container a:hover,
+.continer a:focus{
+    background-color: var(--clr-grey-6);
+    color: var(--clr-primary-1);
+}
+
+ @media screen and (max-width:1440px){
+    .landing-section{
+        padding: 25rem 0;
+    }
+
+    .container{
+        padding: 0.5rem;
+        height: 50%;
+        width: 50%;
+    }
+     .container h3{
+         font-size: 5.5rem;
+     }
+
+     .container a{
+         font-size: 1.6rem;
+     }
+ }
+
+ @media screen and (max-width:1024px){
+     .container{
+         padding: 1.2rem 0;
+     }
+
+     .container h3{
+         font-size: 5rem;
+     }
+
+     .container a{
+         font-size: 1.2rem;
+     }
+ }
+
+ @media screen and (max-width:799px) and (min-width:769px){
+    .container h3{
+        line-height: 1;
+    }
+ }
+
+ @media screen and (max-width:768px){
+     .container{
+         height: 60%;
+         width: 60%;
+     }
+     .container h3{
+         font-size: 5rem;
+         line-height: 1;
+     }
+     .section-center h3{
+         font-size: 3rem;
+     }
+     .lorem-form{
+         flex-direction: column;
+     }
+     .lorem-type{
+         margin: 0.4rem 0;
+     }
+     .btn{
+         margin: 0.8rem 0;
+     }
+ }
+
+ @media screen and (max-width:425px){
+    
+    .container{
+        height: 48%;
+        width: 65%;
+    }
+    .container h3{
+        font-size: 3.5rem;
+    }
+
+    .container a{
+        font-size: 1.3rem;
+        padding: 5px 10px;
+        line-height: 1.15;
+    }    
+ }
