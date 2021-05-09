@@ -2,7 +2,7 @@ import "./DarkStyles/DarkStyle.css";
 
 import ToggleOffIcon from "@material-ui/icons/ToggleOff";
 import ToggleOnIcon from "@material-ui/icons/ToggleOn";
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -47,7 +47,7 @@ function App() {
     localStorage.setItem("theme", JSON.stringify(dark));
     const data = localStorage.getItem("theme");
     setTheme(data);
-  }, [ dark ]);
+  }, [dark]);
 
   return (
     <React.Fragment>
@@ -55,14 +55,14 @@ function App() {
         <div className="app__dark">
           <section className="section-center">
             <ToggleOffIcon
-  onClick = { () => { setDark(false); } } fontSize = "large"
-  style =
-  {
-    { color: "white" }
-  } />
-            <h4>Toggle Dark mode</h4 >
-      <h3>tired of lorem ipsum<
-          /h3>
+              onClick={() => {
+                setDark(false);
+              }}
+              fontSize="large"
+              style={{ color: "white" }}
+            />
+            <h4>Toggle Dark mode</h4>
+            <h3>tired of lorem ipsum</h3>
             <form className="lorem-form" onSubmit={handleSubmit}>
               <div className="cont">
                 <span className="grid-1">
@@ -71,15 +71,14 @@ function App() {
                     className="responsive-text lorem-type"
                   >
                     paragraphs:
-                  </label><
-      input
-  className = "responsive-text"
-  type = "number"
-  name = "amount"
-  id = "amount"
+                  </label>
+                  <input
+                    className="responsive-text"
+                    type="number"
+                    name="amount"
+                    id="amount"
                     value={count}
-                    onChange={
-    (e) => setCount(e.target.value)}
+                    onChange={(e) => setCount(e.target.value)}
                   />
                 </span>
                 <span className="grid-2">
@@ -101,10 +100,8 @@ function App() {
                 <button className="grid-3 btn">generate</button>
               </div>
             </form>
-            {
-    showLoading
-        ? (<div className = "loader-gif">
-           </div>
+            {showLoading ? (
+              <div className="loader-gif"></div>
             ) : (
               <article className="lorem-text">
                 {text.map((item, index) => {
@@ -131,11 +128,11 @@ function App() {
               <div className="cont">
                 <span className="grid-1">
                   <label
-                    htmlFor = "amount"
-                    className =
-                        "responsive-text lorem-type" >
-                        paragraphs: <
-                            /label>
+                    htmlFor="amount"
+                    className="responsive-text lorem-type"
+                  >
+                    paragraphs:{" "}
+                  </label>
                   <input
                     className="responsive-text"
                     type="number"
@@ -144,15 +141,15 @@ function App() {
                     value={count}
                     onChange={(e) => setCount(e.target.value)}
                   />
-                        </span>
+                </span>
                 <span className="grid-2">
                   <label htmlFor="type" className="responsive-text lorem-type">
                     Choose a version:
-                  </label><
-                        select
-                    className = "responsive-text"
-                    name = "types"
-                    id = "types"
+                  </label>
+                  <select
+                    className="responsive-text"
+                    name="types"
+                    id="types"
                     onChange={(e) => setType(e.target.value)}
                   >
                     <option value="hipster-latin">Hipster Speak Only </option>
