@@ -1,0 +1,11 @@
+.app__dark {
+  background-color: black;
+  padding: 10px;
+  height: 100vh;
+}
+
+.app__light {
+  background-color: white;
+  padding: 10px;
+  height: 100vh;
+}
