@@ -1,14 +1,13 @@
-import React from "react"
+import React from "react";
 
-import Cover from './components/cover';
-import LoremSection from './components/loremSection';
+import Cover from "./components/cover";
+import LoremSection from "./components/loremSection";
 
 function App() {
-
-    return (
+  return (
     <>
-    <Cover/>
-    <LoremSection />
+      <Cover />
+      <LoremSection />
     </>
   );
 }
