@@ -14,12 +14,10 @@ function LoremSection() {
   const [count, setCount] = useState(0);
   const [text, setText] = useState([]);
   const [type, setType] = useState("hipster-latin");
-  const [showLoading, setShowLoading] = useState(false);
   const [dark, setDark] = useState(true);
 
   const handleSubmit = async (e) => {
     // starts showing loading gif once submit is clicked
-    setShowLoading(true);
     const url = `https://hipsum.co/api/?type=${type}&paras=50`;
     e.preventDefault();
     //if you console.log the count you will see that count is a string not a number, its not necessary but its a
@@ -35,7 +33,7 @@ function LoremSection() {
       amount = 1;
     }
     //as soon as the text data is ready, turn off the loading GIF
-    setText(newTexts.slice(0, amount), setShowLoading(false));
+    setText(newTexts.slice(0, amount));
 
     //condition if count goes above the total length of the data, it will show all the paragraphs inside your array
     if (count > text.length) {
