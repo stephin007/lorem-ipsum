@@ -2,6 +2,7 @@
   background-color: black;
   padding: 10px;
   height: 100vh;
+  overflow-y: scroll;
   transition: all 0.25s linear;
 }
 
@@ -10,4 +11,5 @@
   padding: 10px;
   height: 100vh;
   transition: all 0.25s linear;
+  overflow-y: scroll;
 }

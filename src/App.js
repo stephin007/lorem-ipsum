@@ -55,13 +55,14 @@ function App() {
             />
           </ThemeIcons>
           <section className="section-center" style={{ marginTop: 10 }}>
-            <h3>tired of lorem ipsum</h3>
+            <h3 style={{ color: "#1eae98" }}>tired of lorem ipsum</h3>
             <form className="lorem-form" onSubmit={handleSubmit}>
               <div className="cont">
                 <span className="grid-1">
                   <label
                     htmlFor="amount"
                     className="responsive-text lorem-type"
+                    style={{ color: "#233e8b" }}
                   >
                     paragraphs:
                   </label>
@@ -75,7 +76,11 @@ function App() {
                   />
                 </span>
                 <span className="grid-2">
-                  <label htmlFor="type" className="responsive-text lorem-type">
+                  <label
+                    htmlFor="type"
+                    className="responsive-text lorem-type"
+                    style={{ color: "#233e8b" }}
+                  >
                     Choose a version:
                   </label>
                   <select
@@ -90,7 +95,12 @@ function App() {
                     </option>
                   </select>
                 </span>
-                <button className="grid-3 btn">generate</button>
+                <button
+                  className="grid-3 btn"
+                  style={{ color: "#a9f1df", fontWeight: 500 }}
+                >
+                  generate
+                </button>
               </div>
             </form>
             {showLoading ? (
@@ -98,7 +108,11 @@ function App() {
             ) : (
               <article className="lorem-text">
                 {text.map((item, index) => {
-                  return <p key={index}>{item}</p>;
+                  return (
+                    <p key={index} style={{ color: "#a9f1df" }}>
+                      {item}
+                    </p>
+                  );
                 })}
               </article>
             )}
