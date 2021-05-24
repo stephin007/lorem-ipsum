@@ -2,7 +2,7 @@ import "./DarkStyles/DarkStyle.css";
 
 import Brightness2Icon from "@material-ui/icons/Brightness2";
 import WbSunnyIcon from "@material-ui/icons/WbSunny";
-import React, {useState} from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 const ThemeIcons = styled.div`
@@ -53,16 +53,13 @@ function App() {
         <div className="app__dark">
           <ThemeIcons>
             <WbSunnyIcon
-  fontSize = "large"
-  style =
-  {
-    { cursor: "pointer", color: "white" }
-  } onClick =
-  { () => setDark(false) } />
-          </ThemeIcons >
-      <section className = "section-center" style = {{ marginTop: 10 }}>
-      <h3 style = {{ color: "#1eae98" }}>tired of lorem ipsum<
-          /h3>
+              fontSize="large"
+              style={{ cursor: "pointer", color: "white" }}
+              onClick={() => setDark(false)}
+            />
+          </ThemeIcons>
+          <section className="section-center" style={{ marginTop: 10 }}>
+            <h3 style={{ color: "#1eae98" }}>tired of lorem ipsum</h3>
             <form className="lorem-form" onSubmit={handleSubmit}>
               <div className="cont">
                 <span className="grid-1">
@@ -72,20 +69,23 @@ function App() {
                     style={{ color: "#233e8b" }}
                   >
                     paragraphs:
-                  </label><
-      input
-  className = "responsive-text"
-  type = "number"
-  name = "amount"
-  id = "amount"
-  value = {count} onChange =
-  { (e) => setCount(e.target.value) } />
-                </span >
-      <span className = "grid-2">< label
-  htmlFor = "type"
-  className = "responsive-text lorem-type"
+                  </label>
+                  <input
+                    className="responsive-text"
+                    type="number"
+                    name="amount"
+                    id="amount"
+                    value={count}
+                    onChange={(e) => setCount(e.target.value)}
+                  />
+                </span>
+                <span className="grid-2">
+                  <label
+                    htmlFor="type"
+                    className="responsive-text lorem-type"
                     style={{
-    color: "#233e8b" }}
+                      color: "#233e8b",
+                    }}
                   >
                     Choose a version:
                   </label>
@@ -109,17 +109,16 @@ function App() {
                 </button>
               </div>
             </form>
-            {
-    showLoading
-        ? (<div className = "loader-gif">
-           </div>
+            {showLoading ? (
+              <div className="loader-gif"></div>
             ) : (
               <article className="lorem-text">
                 {text.map((item, index) => {
                   return (
                     <p key={index} style={{ color: "#a9f1df" }}>
                       {item}
-                    </p>);
+                    </p>
+                  );
                 })}
               </article>
             )}
@@ -140,11 +139,11 @@ function App() {
               <div className="cont">
                 <span className="grid-1">
                   <label
-                    htmlFor = "amount"
-                    className =
-                        "responsive-text lorem-type" >
-                        paragraphs: <
-                            /label>
+                    htmlFor="amount"
+                    className="responsive-text lorem-type"
+                  >
+                    paragraphs:{" "}
+                  </label>
                   <input
                     className="responsive-text"
                     type="number"
@@ -153,15 +152,15 @@ function App() {
                     value={count}
                     onChange={(e) => setCount(e.target.value)}
                   />
-                        </span>
+                </span>
                 <span className="grid-2">
                   <label htmlFor="type" className="responsive-text lorem-type">
                     Choose a version:
-                  </label><
-                        select
-                    className = "responsive-text"
-                    name = "types"
-                    id = "types"
+                  </label>
+                  <select
+                    className="responsive-text"
+                    name="types"
+                    id="types"
                     onChange={(e) => setType(e.target.value)}
                   >
                     <option value="hipster-latin">Hipster Speak Only </option>
