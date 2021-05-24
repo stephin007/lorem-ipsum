@@ -69,6 +69,7 @@ html {
   color: var(--clr-grey-1);
   font-size: 0.875rem;
 }
+
 ul {
   list-style-type: none;
 }
@@ -123,10 +124,10 @@ p {
   }
 }
 /* 
- =============
- Button
- =============
- */
+=============
+Button
+=============
+*/
 
 .btn {
   text-transform: uppercase;
@@ -263,7 +264,6 @@ FOR RESPONSIVENESS
 }
 .grid-2 {
   grid-column: span 8;
-  margin-top: -27px;
 }
 .grid-3 {
   grid-column: span 12;

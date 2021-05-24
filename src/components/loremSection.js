@@ -54,68 +54,66 @@ function LoremSection() {
               onClick={() => setDark(false)}
             />
           </ThemeIcons>
-          <section className="section-center" style={{ marginTop: -60 }}>
-            <h3 style={{ color: "#1eae98" }}>tired of lorem ipsum</h3>
-            <form className="lorem-form" onSubmit={handleSubmit}>
-              <div className="cont">
-                <span className="grid-1">
-                  <label
-                    htmlFor="amount"
-                    className="responsive-text lorem-type"
-                    style={{ color: "#233e8b" }}
-                  >
-                    paragraphs:
-                  </label>
-                  <input
-                    className="responsive-text"
-                    type="number"
-                    name="amount"
-                    id="amount"
-                    value={count}
-                    onChange={(e) => setCount(e.target.value)}
-                  />
-                </span>
-                <span className="grid-2">
-                  <label
-                    htmlFor="type"
-                    className="responsive-text lorem-type"
-                    style={{ color: "#233e8b" }}
-                  >
-                    Choose a version:
-                  </label>
-                  <select
-                    className="responsive-text"
-                    name="types"
-                    id="types"
-                    onChange={(e) => setType(e.target.value)}
-                  >
-                    <option value="hipster-latin">Hipster Speak Only </option>
-                    <option value="hipster-centric">
-                      Hipster Speak with Latin
-                    </option>
-                  </select>
-                </span>
-                <button
-                  className="grid-3 btn"
-                  style={{ background: "#a9f1df", fontWeight: 500 }}
-                >
-                  generate
-                </button>
-              </div>
+          <section
+            id="lorem-section"
+            className="section-center"
+            style={{ marginTop: -30 }}
+          >
+            <h3 style={{ color: "#1eae98", fontSize: "25px" }}>
+              tired of lorem ipsum
+            </h3>
+            <form
+              className="lorem-form"
+              onSubmit={handleSubmit}
+              style={{ marginTop: 10 }}
+            >
+              <label
+                htmlFor="amount"
+                className="lorem-type"
+                style={{ color: "#233e8b" }}
+              >
+                paragraphs:
+              </label>
+              <input
+                type="number"
+                name="amount"
+                id="amount"
+                value={count}
+                onChange={(e) => setCount(e.target.value)}
+              />
+              <label
+                htmlFor="type"
+                className="lorem-type"
+                style={{ color: "#233e8b" }}
+              >
+                Choose a version:
+              </label>
+              <select
+                name="types"
+                id="types"
+                onChange={(e) => setType(e.target.value)}
+              >
+                <option value="hipster-latin">Hipster Speak Only </option>
+                <option value="hipster-centric">
+                  Hipster Speak with Latin
+                </option>
+              </select>
+              <button
+                className="btn"
+                style={{ background: "#867ae9", fontWeight: 500 }}
+              >
+                generate
+              </button>
             </form>
-            {showLoading ? (
-              <div className="loader-gif"></div>
-            ) : (
-              <article className="lorem-text">
-                {text.map((item, index) => {
-                  return (
-                    <p key={index} style={{ color: "#a9f1df" }}>
-                      {item}
-                    </p>
-                  );
-                })}
-              </article>
-            )}
+            <article className="lorem-text">
+              {text.map((item, index) => {
+                return (
+                  <p key={index} style={{ color: "#a9f1df" }}>
+                    {item}
+                  </p>
+                );
+              })}
+            </article>
           </section>
         </div>
       ) : (
@@ -127,54 +125,47 @@ function LoremSection() {
               onClick={() => setDark(true)}
             />
           </ThemeIcons>
-          <section className="section-center" style={{ marginTop: -60 }}>
-            <h3>tired of lorem ipsum</h3>
-            <form className="lorem-form" onSubmit={handleSubmit}>
-              <div className="cont">
-                <span className="grid-1">
-                  <label
-                    htmlFor="amount"
-                    className="responsive-text lorem-type"
-                  >
-                    paragraphs:
-                  </label>
-                  <input
-                    className="responsive-text"
-                    type="number"
-                    name="amount"
-                    id="amount"
-                    value={count}
-                    onChange={(e) => setCount(e.target.value)}
-                  />
-                </span>
-                <span className="grid-2">
-                  <label htmlFor="type" className="responsive-text lorem-type">
-                    Choose a version:
-                  </label>
-                  <select
-                    className="responsive-text"
-                    name="types"
-                    id="types"
-                    onChange={(e) => setType(e.target.value)}
-                  >
-                    <option value="hipster-latin">Hipster Speak Only </option>
-                    <option value="hipster-centric">
-                      Hipster Speak with Latin
-                    </option>
-                  </select>
-                </span>
-                <button className="grid-3 btn">generate</button>
-              </div>
+          <section
+            id="lorem-section"
+            className="section-center"
+            style={{ marginTop: -30 }}
+          >
+            <h3 style={{ fontSize: "25px" }}>tired of lorem ipsum</h3>
+            <form
+              className="lorem-form"
+              onSubmit={handleSubmit}
+              style={{ marginTop: 10 }}
+            >
+              <label htmlFor="amount" className="lorem-type">
+                paragraphs:
+              </label>
+              <input
+                type="number"
+                name="amount"
+                id="amount"
+                value={count}
+                onChange={(e) => setCount(e.target.value)}
+              />
+              <label htmlFor="type" className="lorem-type">
+                Choose a version:
+              </label>
+              <select
+                name="types"
+                id="types"
+                onChange={(e) => setType(e.target.value)}
+              >
+                <option value="hipster-latin">Hipster Speak Only </option>
+                <option value="hipster-centric">
+                  Hipster Speak with Latin
+                </option>
+              </select>
+              <button className="btn">generate</button>
             </form>
-            {showLoading ? (
-              <div className="loader-gif"></div>
-            ) : (
-              <article className="lorem-text">
-                {text.map((item, index) => {
-                  return <p key={index}>{item}</p>;
-                })}
-              </article>
-            )}
+            <article className="lorem-text">
+              {text.map((item, index) => {
+                return <p key={index}>{item}</p>;
+              })}
+            </article>
           </section>
         </div>
       )}
