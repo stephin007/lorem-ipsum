@@ -1,7 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import styled from "styled-components";
+import WbSunnyIcon from "@material-ui/icons/WbSunny";
+import Brightness2Icon from "@material-ui/icons/Brightness2";
 import "./DarkStyles/DarkStyle.css";
-import ToggleOffIcon from "@material-ui/icons/ToggleOff";
-import ToggleOnIcon from "@material-ui/icons/ToggleOn";
+
+const ThemeIcons = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  padding: 30px;
+`;
 
 function App() {
   const [count, setCount] = useState(0);
@@ -9,7 +16,6 @@ function App() {
   const [type, setType] = useState("hipster-latin");
   const [showLoading, setShowLoading] = useState(false);
   const [dark, setDark] = useState(true);
-  const [theme, setTheme] = useState("");
 
   const handleSubmit = async (e) => {
     // starts showing loading gif once submit is clicked
@@ -37,25 +43,18 @@ function App() {
     }
   };
 
-  useEffect(() => {
-    localStorage.setItem("theme", JSON.stringify(dark));
-    const data = localStorage.getItem("theme");
-    setTheme(data);
-  }, []);
-
   return (
     <React.Fragment>
-      {dark === false ? (
+      {dark === true ? (
         <div className="app__dark">
-          <section className="section-center">
-            <ToggleOffIcon
-              onClick={() => {
-                setDark(true);
-              }}
+          <ThemeIcons>
+            <WbSunnyIcon
               fontSize="large"
-              style={{ color: "white" }}
+              style={{ cursor: "pointer", color: "white" }}
+              onClick={() => setDark(false)}
             />
-            <h4>Toggle Dark mode</h4>
+          </ThemeIcons>
+          <section className="section-center" style={{ marginTop: 10 }}>
             <h3>tired of lorem ipsum</h3>
             <form className="lorem-form" onSubmit={handleSubmit}>
               <div className="cont">
@@ -107,16 +106,14 @@ function App() {
         </div>
       ) : (
         <div className="app__light">
-          <section className="section-center">
-            <ToggleOnIcon
-              onClick={() => {
-                setDark(false);
-              }}
+          <ThemeIcons>
+            <Brightness2Icon
               fontSize="large"
-              style={{ color: "black" }}
+              style={{ cursor: "pointer" }}
+              onClick={() => setDark(true)}
             />
-            <h4>Toggle Dark mode</h4>
-
+          </ThemeIcons>
+          <section className="section-center" style={{ marginTop: 10 }}>
             <h3>tired of lorem ipsum</h3>
             <form className="lorem-form" onSubmit={handleSubmit}>
               <div className="cont">
