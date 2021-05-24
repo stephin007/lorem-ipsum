@@ -14,7 +14,7 @@ function LoremSection() {
   const [count, setCount] = useState(0);
   const [text, setText] = useState([]);
   const [type, setType] = useState("hipster-latin");
-  const [dark, setDark] = useState("dark");
+  const [dark, setDark] = useState("");
 
   const switchLight = (theme) => {
     localStorage.setItem("theme", theme);
