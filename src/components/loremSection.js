@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import WbSunnyIcon from "@material-ui/icons/WbSunny";
 import Brightness2Icon from "@material-ui/icons/Brightness2";
@@ -14,7 +14,19 @@ function LoremSection() {
   const [count, setCount] = useState(0);
   const [text, setText] = useState([]);
   const [type, setType] = useState("hipster-latin");
-  const [dark, setDark] = useState(true);
+  const [dark, setDark] = useState("dark");
+
+  const switchLight = (theme) => {
+    localStorage.setItem("theme", theme);
+    setDark(theme);
+  };
+
+  useEffect(() => {
+    const theme = localStorage.getItem("theme");
+    setDark(theme);
+  }, []);
+
+  console.log(dark);
 
   const handleSubmit = async (e) => {
     // starts showing loading gif once submit is clicked
@@ -43,13 +55,13 @@ function LoremSection() {
 
   return (
     <React.Fragment>
-      {dark === true ? (
+      {dark === "dark" ? (
         <div className="app__dark">
           <ThemeIcons>
             <WbSunnyIcon
               fontSize="large"
               style={{ cursor: "pointer", color: "white" }}
-              onClick={() => setDark(false)}
+              onClick={() => switchLight("light")}
             />
           </ThemeIcons>
           <section
@@ -120,7 +132,9 @@ function LoremSection() {
             <Brightness2Icon
               fontSize="large"
               style={{ cursor: "pointer" }}
-              onClick={() => setDark(true)}
+              onClick={() => {
+                switchLight("dark");
+              }}
             />
           </ThemeIcons>
           <section
